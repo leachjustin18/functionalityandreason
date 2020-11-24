@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" {% if page.author %}content="{{page.author}}"{% else %}content="Justin Leach"{% endif %}>
+    <meta name="keywords" {% if page.keywords %}content="{{page.keywords}}"{% else %}content="HTML, CSS, JavaScript, React, React Native, Node, Python, and other languages blogs"{% endif %}>
+    <meta name="description" {% if page.description %}content="{{page.description}}"{% else %}content="Blog about various web and server technologies.  Including HTML, CSS, JavaScript, and other languages"{% endif %}>
+    <title>{{page.title}}</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    {{content}}
+</body>
+</html>

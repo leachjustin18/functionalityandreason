@@ -1,2 +1,5 @@
-# functionalityandreason
-Jekyll Blog Post
+# Functionality and Reason
+
+
+## About
+A technical blog site using Jekyll.

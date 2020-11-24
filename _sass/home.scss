@@ -1,0 +1,15 @@
+.home {
+    &__main {
+        display: grid;
+        grid-template-columns: pxToRem(200px);
+        grid-template-areas: 
+          "image content";
+          column-gap: pxToRem(16px);
+      }
+  &__image {
+    grid-area: image;
+  }
+  &__content {
+    grid-area: content;
+  }
+}

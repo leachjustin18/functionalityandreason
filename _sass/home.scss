@@ -3,13 +3,14 @@
         display: grid;
         grid-template-columns: pxToRem(200px);
         grid-template-areas: 
-          "image content";
-          column-gap: pxToRem(16px);
+          "image content .";
+          column-gap: pxToRem(32px);
       }
   &__image {
     grid-area: image;
   }
   &__content {
     grid-area: content;
+    max-width: pxToRem(700px);
   }
 }

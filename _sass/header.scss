@@ -1,0 +1,19 @@
+.header {
+    background-color: white;
+    border-bottom: pxToRem(1px) solid #ECF0F1;
+    box-shadow: 0 pxToRem(1px) pxToRem(5px) #ECF0F1;
+    margin-bottom: pxToRem(48px);
+    padding: pxToRem(16px) pxToRem(32px);
+    position: sticky;
+    top: 0;
+}
+
+.navigation {
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style-type: none;
+    }
+}

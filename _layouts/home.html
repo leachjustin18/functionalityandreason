@@ -1,21 +1,18 @@
 ---
 layout: default
+home: true
 ---
 
 <main class="home__main">
-  <div class="home__image">
-    <img src="https://via.placeholder.com/200x800.png" alt="" />
-  </div>
-
-  <div class="home__content">
-    {% include navigation.html %}
-
-    <h1>Latest Posts</h1>
-      {% for post in site.posts limit: 4 %}
-      <article>
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        {{ post.excerpt }} By {{post.author}} Published {{post.date | date: '%B %d, %Y'}}
-      </article>
-      {% endfor %}
-  </div>
+  {% for post in site.posts limit: 6 %}
+  <article class="home__article">
+    <a href="{{ post.url }}">
+      <img src="http://placekitten.com/300/300" alt="{{ post.title }} article" style="width: 100%" />
+    </a>
+    <div class="home__articleBody">
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      {{post.date | date: '%B %d, %Y'}} {{ post.excerpt }}
+    </div>
+  </article>
+  {% endfor %}
 </main>

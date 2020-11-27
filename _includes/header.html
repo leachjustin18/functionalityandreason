@@ -1,0 +1,14 @@
+<header class="header">
+    {% if layout.home %}
+      <h1><a href="/">Functionality & Reason</a></h1>
+    {% else %}
+      <h2><a href="/">Functionality & Reason</a></h2>
+    {% endif %}
+    <nav class="navigation">
+        {% for item in site.data.navigation%}
+        <a href="{{ item.link}}" {% if page.url == item.link%}class="current"{% endif %}>
+          {{item.name}}
+        </a>
+    {% endfor %}
+    </nav>
+</header>

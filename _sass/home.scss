@@ -1,26 +1,26 @@
 .home {
   &__main {
     display: grid;
-    max-width: pxToRem(1200px);
+    max-width: pxToRem(1200);
     margin-left: auto;
     margin-right: auto;
-    padding: 0 pxToRem(16px);
-    grid-template-columns: repeat(auto-fill, minmax(pxToRem(300px), 1fr));
+    padding: 0 pxToRem(16);
+    grid-template-columns: repeat(auto-fill, minmax(pxToRem(300), 1fr));
     gap: pxToRem(32px);
   }
 
   &__article {
-    border: pxToRem(1px) solid #ECF0F1;
-    border-radius: 0 0 pxToRem(6px) pxToRem(6px);
+    border: pxToRem(1) solid #ECF0F1;
+    border-radius: 0 0 pxToRem(6) pxToRem(6);
     text-align: center;
     transition: box-shadow 0.36s ease-in;
   }
 
   &__article:hover {
-    box-shadow: pxToRem(7px) pxToRem(6px) pxToRem(7px) #c5cdcf;
+    box-shadow: pxToRem(7) pxToRem(6) pxToRem(7) #c5cdcf;
   }
 
   &__articleBody {
-    padding: 0 pxToRem(16px);
+    padding: 0 pxToRem(16);
   }
 }

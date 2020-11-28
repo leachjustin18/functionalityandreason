@@ -1,8 +1,8 @@
 <header class="header">
     {% if layout.home %}
-      <h1><a href="/">Functionality & Reason</a></h1>
+      <h1><a href="/">{{site.siteName}}</a></h1>
     {% else %}
-      <h2><a href="/">Functionality & Reason</a></h2>
+      <h2><a href="/">{{site.siteName}}</a></h2>
     {% endif %}
     <nav class="navigation">
         {% for item in site.data.navigation%}

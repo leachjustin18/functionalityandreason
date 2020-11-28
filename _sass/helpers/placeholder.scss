@@ -1,0 +1,19 @@
+%hoverLink {
+  position: relative;
+
+  &::after {
+    content: ' ';
+    width: 0;
+    border-bottom: pxToRem(1) solid #878787;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s ease-in-out;
+  }
+
+  &:hover {
+    &::after {
+      width: 95%;
+    }
+  }
+}

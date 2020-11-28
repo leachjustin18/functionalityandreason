@@ -1,4 +1,6 @@
-@import "functions";
+@import "helpers/functions";
+@import "helpers/variables";
+@import "helpers/mixins";
 
 html {
     box-sizing: border-box;
@@ -7,6 +9,7 @@ html {
 }
 
 body {
+    color: $defaultFontColor;
     margin: 0;
     font: normal 400 pxToRem(16)/1.33 'Quicksand', Helvetica, sans-serif;
 }

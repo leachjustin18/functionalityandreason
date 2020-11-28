@@ -1,11 +1,28 @@
 .header {
+    align-items: center;
     background-color: white;
     border-bottom: pxToRem(1) solid #ECF0F1;
     box-shadow: 0 pxToRem(1) pxToRem(5) #ECF0F1;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: pxToRem(48);
     padding: pxToRem(16) pxToRem(32);
     position: sticky;
     top: 0;
+
+    &__logo {
+        margin: 0;
+        @include desktop() {
+            font-size: pxToRem(26);
+        }
+       
+        font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+    }
+
+    &__logoLink {
+        color: $defaultFontColor;
+        text-decoration: none;
+    }
 }
 
 .navigation {

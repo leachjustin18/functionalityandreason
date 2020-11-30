@@ -14,13 +14,20 @@
     border-radius: 0 0 pxToRem(6) pxToRem(6);
     text-align: center;
     transition: box-shadow 0.36s ease-in;
-  }
 
-  &__article:hover {
-    box-shadow: pxToRem(7) pxToRem(6) pxToRem(7) #c5cdcf;
+    &:hover {
+      box-shadow: pxToRem(7) pxToRem(6) pxToRem(7) #c5cdcf;
+    }
   }
 
   &__articleBody {
-    padding: 0 pxToRem(16);
+    padding: pxToRem(16);
+
+    &Title {
+      font-size: pxToRem(19);
+      font-weight: 700;
+      margin: 0;
+      padding-bottom: pxToRem(8);
+    }
   }
 }

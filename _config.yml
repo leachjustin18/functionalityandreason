@@ -8,10 +8,15 @@ defaults:
       path: ""
     values:
       layout: "default"
+plugins:
+  - jekyll-paginate
 
 sass:
   style: compressed
 
 permalink: pretty
+
+paginate: 2
+paginate_path: "/:num/"
 
 siteName: Functionality & Reason

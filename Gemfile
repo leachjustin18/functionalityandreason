@@ -7,3 +7,7 @@ git_source(:github) {|functionalityandreason| "https://github.com/leachjustin18/
 # gem "rails"
 
 gem "jekyll", "~> 4.1"
+
+group :jekyll_plugins do
+    gem "jekyll-paginate"
+end

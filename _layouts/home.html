@@ -37,12 +37,13 @@ times:paginator.per_page %} {% assign currentPage = paginator.page %} {% else %}
   {% endfor %}
 </main>
 
+
 {% assign postCount = site.posts | size %} {% assign postsCovered =
 site.paginate | plus:offset %} {% if postsCovered < postCount %}
-<button id="loadMorePosts">Load more posts</button>
+<button id="loadMorePosts" class="button" type="button">Load more posts</button>
 {% endif %}
 
-<div id="manualNavigation">
+<div id="manualNavigation" class="home__manualNavigation">
   {% if paginator.total_pages > 1 %}
   <div class="pagination">
     {% if paginator.previous_page %}

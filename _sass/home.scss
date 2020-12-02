@@ -10,7 +10,7 @@
   }
 
   &__article {
-    border: pxToRem(1) solid #ECF0F1;
+    border: pxToRem(1) solid #ecf0f1;
     border-radius: 0 0 pxToRem(6) pxToRem(6);
     text-align: center;
     transition: box-shadow 0.36s ease-in;
@@ -28,6 +28,16 @@
       font-weight: 700;
       margin: 0;
       padding-bottom: pxToRem(8);
+    }
+
+    &Link {
+      color: #125392;
+      display: inline-block;
+      font-size: pxToRem(15);
+      margin: pxToRem(16) 0;
+      text-decoration: none;
+
+      @extend %hoverLink;
     }
   }
 

@@ -30,4 +30,14 @@
       padding-bottom: pxToRem(8);
     }
   }
+
+  //TODO: Style later
+  &__manualNavigation {
+    display: none;
+  }
+
+  &__loadMoreButtonWrapper {
+    margin: pxToRem(32) pxToRem(16);
+    text-align: center;
+  }
 }

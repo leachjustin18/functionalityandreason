@@ -16,7 +16,7 @@ sass:
 
 permalink: pretty
 
-paginate: 2
+paginate: 3
 paginate_path: "/:num/"
 
 siteName: Functionality & Reason

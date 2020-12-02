@@ -1,21 +1,48 @@
-.button {
-    background-color: #e0e0e0;
-    border: 0;
-    border-radius: pxToRem(4);
-    box-shadow: 0 pxToRem(3) pxToRem(1) pxToRem(-2) rgba(0,0,0,0.2), 0 pxToRem(2) pxToRem(2) 0 rgba(0,0,0,0.14), 0 pxToRem(1) pxToRem(5) 0 rgba(0,0,0,0.12);
-    color: $defaultFontColor;
-    cursor: pointer;
-    font-size: pxToRem(14);
-    font-weight: 700;
-    line-height: 1.75;
-    padding: pxToRem(6) pxToRem(16);
-    text-transform: uppercase;
-    user-select: none;
+.btn {
+  background-color: #e0e0e0;
+  border: 0;
+  border-radius: pxToRem(4);
+  box-shadow: 0 pxToRem(3) pxToRem(1) pxToRem(-2) rgba(0, 0, 0, 0.2),
+    0 pxToRem(2) pxToRem(2) 0 rgba(0, 0, 0, 0.14),
+    0 pxToRem(1) pxToRem(5) 0 rgba(0, 0, 0, 0.12);
+  color: $defaultFontColor;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: pxToRem(14);
+  font-weight: 700;
+  line-height: 1.75;
+  padding: pxToRem(6) pxToRem(16);
+  text-transform: uppercase;
+  user-select: none;
 
-    &:disabled {
-        cursor: default;
+  &:disabled {
+    cursor: default;
+    color: rgba(0, 0, 0, 0.26);
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.12);
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.12);
         color: rgba(0, 0, 0, 0.26);
         box-shadow: none;
-        background-color: rgba(0, 0, 0, 0.12);
     }
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 pxToRem(2) pxToRem(4) pxToRem(-1) rgba(0, 0, 0, 0.2),
+      0 pxToRem(4) pxToRem(5) pxToRem(0) rgba(0, 0, 0, 0.14),
+      0 pxToRem(1) pxToRem(10) pxToRem(0) rgba(0, 0, 0, 0.12);
+    background-color: #d5d5d5;
+  }
+
+  &--primary {
+    color: white;
+    background-color: #1976d2;
+
+    &:hover,
+    &:active {
+        background-color: rgb(17, 82, 147);
+    }
+  }
 }

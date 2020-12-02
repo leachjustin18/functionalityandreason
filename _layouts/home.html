@@ -37,10 +37,11 @@ times:paginator.per_page %} {% assign currentPage = paginator.page %} {% else %}
   {% endfor %}
 </main>
 
-
 {% assign postCount = site.posts | size %} {% assign postsCovered =
 site.paginate | plus:offset %} {% if postsCovered < postCount %}
-<button id="loadMorePosts" class="button" type="button">Load more posts</button>
+<button id="loadMorePosts" class="btn btn--primary" type="button" ripple>
+  Load more posts
+</button>
 {% endif %}
 
 <div id="manualNavigation" class="home__manualNavigation">

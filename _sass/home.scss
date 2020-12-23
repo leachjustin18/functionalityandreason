@@ -16,7 +16,7 @@
     transition: box-shadow 0.36s ease-in;
 
     &:hover {
-      box-shadow: pxToRem(7) pxToRem(6) pxToRem(7) #c5cdcf;
+      box-shadow: pxToRem(7) pxToRem(6) pxToRem(7) $grey;
     }
   }
 

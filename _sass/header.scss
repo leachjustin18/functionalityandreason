@@ -80,18 +80,34 @@
 }
 
 .mobileNavigation {
+  box-shadow: 0 pxToRem(6) pxToRem(12) $grey;
   position: fixed;
   height: 100%;
   background-color: #f7f7f7;
   transform: translateX(100%);
-  top: 74px;
+  top: pxToRem(74);
   z-index: 20;
   right: 0;
-  width: 40vw;
+  width: pxToRem(300);
 
   transition: transform 0.40s ease-in-out;
 
   @include desktop() {
     display: none;
+  }
+
+
+
+  &__link {
+    border-bottom: pxToRem(2) solid #000;
+    color: $defaultFontColor;
+    display: block;
+    padding: pxToRem(16);
+    font-weight: 600;
+    text-decoration: none;
+
+    &:first-child {
+      border-top: pxToRem(2) solid #000;
+    }
   }
 }

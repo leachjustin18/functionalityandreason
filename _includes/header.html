@@ -32,9 +32,11 @@
   {% for item in site.data.navigation%}
   <a
     href="{{item.link}}"
-    class="navigation__link {% if page.url == item.link%} navigation__linkCurrent{% endif %}"
+    class="mobileNavigation__link {% if page.url == item.link%} mobileNavigation__linkCurrent{% endif %}"
   >
+  <span class="textLink">
     {{item.name}}
+  </span>
   </a>
   {% endfor %}
 </nav>

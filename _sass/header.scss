@@ -96,18 +96,36 @@
     display: none;
   }
 
-
-
   &__link {
-    border-bottom: pxToRem(2) solid #000;
+    border-bottom: pxToRem(1) solid #000;
     color: $defaultFontColor;
     display: block;
     padding: pxToRem(16);
-    font-weight: 600;
     text-decoration: none;
 
     &:first-child {
-      border-top: pxToRem(2) solid #000;
+      border-top: pxToRem(1) solid #000;
+    }
+
+    &:hover {
+      .mobileNavigation__text {
+        &::after {
+          width: 95%;
+        }
+      }
+    }
+
+    .mobileNavigation__text {
+      @extend %hoverLink;
+    }
+  }
+
+  &__linkCurrent {
+    .mobileNavigation__text {
+      font-weight: 600;
+      &::after {
+        width: 95%;
+      }
     }
   }
 }

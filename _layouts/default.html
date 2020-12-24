@@ -100,8 +100,11 @@
   {% include header.html %}
   {{content}}
 
-  <footer>
-    Email RSS Footer content
+  <footer class="footer">
+    <div>
+    &copy; {{ 'now' | date: "%Y" }} Funcationality and reason
+  </div>
+    <a href="/feed.xml" target="_blank" class="footer__link">RSS Feed</a> | See any issues? <a href="https://github.com/leachjustin18/functionalityandreason/issues" target="_blank" rel="noreferrer noopener" class="footer__link">Open an issue</a>
   </footer>
   <script src="/assets/js/main.js" defer></script>
 </body>

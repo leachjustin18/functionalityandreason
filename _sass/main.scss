@@ -23,6 +23,10 @@ img {
     display: block;
 }
 
+p {
+    margin: pxToRem(16) 0;
+}
+
 @import "header";
 @import "home";
 @import "button";

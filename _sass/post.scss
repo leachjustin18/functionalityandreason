@@ -35,5 +35,58 @@
             position: static;
             }
         }
+
+        &Share {
+            display: flex;
+        }
+
+        &ShareButtonsContainer {
+            display: flex;
+            align-items: center;
+
+            >div {
+                cursor: pointer;
+                height: pxToRem(20);
+                width: pxToRem(38);
+                text-align: center;
+            }
+
+            svg {
+                height: pxToRem(20);
+                fill: #d5d5d5;
+            }
+
+            .facebook {
+                &:hover {
+                    svg {
+                        fill: #3B5998;
+                    }
+                }
+            }
+
+            .twitter {
+                &:hover {
+                    svg {
+                        fill: #55ACEE;
+                    }
+                }
+            }
+
+            .linkedin {
+                &:hover {
+                    svg {
+                        fill: #0077b5;
+                    }
+                }
+            }
+
+            .mail {
+                &:hover {
+                    svg {
+                        fill: #7D7D7D;
+                    }
+                }
+            }
+        }
     }
 }

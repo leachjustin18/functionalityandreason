@@ -5,9 +5,35 @@
     padding: 0 pxToRem(16);
 
     &__contentWrapper {
-        display: flex;
-        flex-wrap: wrap;
+        @include desktop() {
+            display: flex;
+        }
     }
 
-   
+    &__content {
+        @include desktop() {
+            padding-right: pxToRem(48);
+            width: 70%;
+        }
+    }
+
+    &__meta {
+        @include desktop() {
+            border-left: pxToRem(1) solid black;
+            padding-left: pxToRem(16);
+            padding: 0 0 0 pxToRem(16);
+            border-top: none;
+        }
+
+        border-top: pxToRem(1) solid black;
+        padding-top: pxToRem(16);
+
+        margin-top: pxToRem(16);
+
+        &Content {
+            @include desktop() {
+            position: static;
+            }
+        }
+    }
 }

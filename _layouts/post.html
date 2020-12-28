@@ -31,8 +31,8 @@ layout: default
 
   div.highlighter-rouge::before,
   figure.highlight::before {
-    font-family: 'Ubuntu Mono', SFMono-Regular, Menlo, Monaco, Consolas,
-      'Liberation Mono', 'Courier New', 'Noto Serif SC', STSong, monospace;
+    font-family: "Ubuntu Mono", SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", "Noto Serif SC", STSong, monospace;
     content: attr(data-lang);
     font-size: 0.9rem;
     color: #e9ecef;
@@ -366,42 +366,35 @@ layout: default
 </style>
 
 <main class="post">
-<header>
-  <img src="https://via.placeholder.com/1900x300.png" alt="" />
+  <header>
+    <img src="https://via.placeholder.com/1900x300.png" alt="" width="100%" />
 
-  <h1>{{ page.title }}</h1>
-</header>
+    <h1>{{ page.title }}</h1>
 
+    <div>
+      <em><strong>Approximent reading time:</strong></em>
+      {% assign words = content | number_of_words %} {% if words < 181 %} A
+      minute or less {% else %} {{ words | divided_by:180 }} minutes {% endif %}
+    </div>
+  </header>
 
-<!-- <p>
+  <!-- <p>
   {% assign author = site.authors | where:
   'short_name', page.author | first %} {% if author %} -
   <a href="{{ author.url }}">{{ author.name }}</a> {% endif %}
 
 </p> -->
 
+  <div class="post__contentWrapper">
+    <div class="post__content">{{content}}</div>
 
-<div class="post__contentWrapper">
-  <div class="post__content">
-    {{content}}
+    <aside class="post__meta">
+      <div class="post__metaContent">
+        <span class="post__metaTitle">Published:</span> {{page.date | date: '%B %d, %Y'}}
+      </div>
+      <div><span class="post__metaTitle">By:</span> {{page.author}}</div>
+
+      <div><span class="post__metaTitle">Share:</span></div>
+    </aside>
   </div>
-
-  <aside class="post__meta">
-    <div>
-      Published: {{page.date | date: '%B %d, %Y'}}
-    </div>
-    <div>
-      By: {{page.author}}
-    </div>
-    <div>
-      Approximent reading time:
-      {% assign words = content | number_of_words %}
-      {% if words < 360 %} A minute or less {% else %} {{ words | divided_by:180
-        }} minutes {% endif %} </div>
-        <div>
-          Share:
-        </div>
-  </aside>
-</div>
-
 </main>

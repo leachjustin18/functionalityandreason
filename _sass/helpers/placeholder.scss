@@ -24,3 +24,10 @@
 
   @extend %hoverLink;
 }
+
+%pageContainer {
+  max-width: pxToRem(1200);
+  padding: 0 pxToRem(16);
+  margin-left: auto;
+  margin-right: auto;
+}

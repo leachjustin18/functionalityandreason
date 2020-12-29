@@ -1,8 +1,5 @@
 .post {
-    max-width: pxToRem(1200);
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 pxToRem(16);
+    @extend %pageContainer;
 
     &__contentWrapper {
         @include desktop() {

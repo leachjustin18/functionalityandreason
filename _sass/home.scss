@@ -1,12 +1,9 @@
 .home {
   &__main {
     display: grid;
-    max-width: pxToRem(1200);
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 pxToRem(16);
     grid-template-columns: repeat(auto-fill, minmax(pxToRem(300), 1fr));
     gap: pxToRem(32);
+    @extend %pageContainer;
   }
 
   &__article {

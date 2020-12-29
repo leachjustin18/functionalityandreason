@@ -390,24 +390,28 @@ layout: default
 
     <aside class="post__meta">
       <div class="post__metaContent">
-        <span class="post__metaTitle">Published:</span>
-        {{page.date | date: '%B %d, %Y'}}
-      </div>
-      <div><span class="post__metaTitle">By:</span> {{page.author}}</div>
-
-      <div class="post__metaShare">
-        <span class="post__metaTitle">Share:</span>
-
-        <div class="post__metaShareButtonsContainer">
-          {% include share.html %}
+        <div class="post__metaWrapper">
+          <span class="post__metaTitle">Published:</span>
+          {{page.date | date: '%B %d, %Y'}}
         </div>
-      </div>
 
-      <div>
-        <div class="post__metaTitle">Tags:</div>
-        {% for tag in page.tags %}
-        <span>{{ tag }}</span>
-        {% endfor %}
+        <div class="post__metaWrapper"><span class="post__metaTitle">By:</span>
+          {{page.author}}</div>
+
+        <div class="post__metaShare post__metaWrapper">
+          <span class="post__metaTitle">Share:</span>
+
+          <div class="post__metaShareButtonsContainer">
+            {% include share.html %}
+          </div>
+        </div>
+
+        <div class="post__metaWrapper">
+          <span class="post__metaTitle">Tags:</span>
+          {% for tag in page.tags %}
+          <a href="/tag/{{ tag }}" target="_blank" class="post__metaTag">{{ tag }}</a>
+          {% endfor %}
+        </div>
       </div>
     </aside>
   </div>

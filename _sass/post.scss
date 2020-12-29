@@ -36,6 +36,10 @@
             }
         }
 
+        &Wrapper {
+            margin-bottom: pxToRem(12);
+        }
+
         &Share {
             display: flex;
         }
@@ -93,6 +97,23 @@
                         fill: #7D7D7D;
                     }
                 }
+            }
+        }
+
+        &Tag {
+            background-color: $defaultFontColor;
+            border: 1px solid $defaultFontColor;
+            display: inline-block;
+            color: white;
+            padding: pxToRem(4) pxToRem(8);
+            margin-right: pxToRem(4);
+            transition: background ease-in-out .50s;
+            text-decoration: none;
+            user-select: none;
+
+            &:hover {
+                background-color: white;
+                color: $defaultFontColor;
             }
         }
     }

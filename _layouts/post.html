@@ -12,7 +12,7 @@ layout: default
   kbd,
   li code.highlighter-rouge,
   p code.highlighter-rouge {
-    color: #c66;
+    color: #004F94;
     font-size: 1rem;
     background-color: #f7f7f5;
     padding: 2px 4px;
@@ -29,8 +29,8 @@ layout: default
     border-radius: 4px;
   }
 
-  div.highlighter-rouge::before,
-  figure.highlight::before {
+  .highlighter-rouge::before,
+  .highlight::before {
     font-family: "Ubuntu Mono", SFMono-Regular, Menlo, Monaco, Consolas,
       "Liberation Mono", "Courier New", "Noto Serif SC", STSong, monospace;
     content: attr(data-lang);
@@ -40,26 +40,10 @@ layout: default
     display: block;
     height: 1rem;
     right: 0.5rem;
+    top: 0.2rem;
     z-index: 5;
   }
 
-  figure.highlight::before {
-    margin-top: -1rem;
-  }
-
-  figure table::-webkit-scrollbar,
-  pre::-webkit-scrollbar {
-    height: 4px;
-    background-color: #000;
-    width: 0;
-  }
-
-  figure table::-webkit-scrollbar-thumb,
-  pre::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: #ecebe7;
-  }
-
   .rouge-table .code pre {
     overflow: hidden;
   }
@@ -68,21 +52,21 @@ layout: default
     overflow: hidden;
   }
 
-  table.rouge-table,
-  table.rouge-table pre,
-  table.rouge-table td,
-  table.rouge-table tr {
+  .rouge-table,
+  .rouge-table pre,
+  .rouge-table td,
+  .rouge-table tr {
     border: 0;
     padding: 0;
     margin: 0;
   }
 
-  table.rouge-table td.gutter {
+  .rouge-table td.gutter {
     padding-right: 0.5rem;
     border-right: 1px solid #adb5bd;
   }
 
-  table.rouge-table td.code {
+  .rouge-table td.code {
     padding-left: 0.5rem;
   }
 
@@ -97,10 +81,11 @@ layout: default
   .highlight,
   .highlight pre,
   .highlight table {
-    background: #2e3e4e;
+    background-color: black;
     color: #e9ecef;
     border-radius: 4px;
     font-size: 1rem;
+    padding: 4px;
     margin: 0;
   }
 

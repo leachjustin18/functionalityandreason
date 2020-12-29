@@ -1,6 +1,6 @@
 ---
 author: Justin Leach
-tags: TypeScript Compiler
+tags: Algorithm
 category: Algorithm
 title: Finding random values
 ---

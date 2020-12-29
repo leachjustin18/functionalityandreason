@@ -1,6 +1,6 @@
 ---
 author: Justin Leach
-tags: ['Algorithm, Order', 'JavaScript']
+tags: Algorithm Order JavaScript
 category: Algorithm
 title: Finding the next prime number
 ---

@@ -44,8 +44,7 @@
             display: flex;
             align-items: center;
 
-            >div {
-                cursor: pointer;
+            >a {
                 height: pxToRem(20);
                 width: pxToRem(38);
                 text-align: center;
@@ -54,6 +53,14 @@
             svg {
                 height: pxToRem(20);
                 fill: #d5d5d5;
+            }
+
+            .reddit {
+                &:hover {
+                    svg {
+                        fill: #ff5700;
+                    }
+                }
             }
 
             .facebook {

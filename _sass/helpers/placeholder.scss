@@ -17,3 +17,10 @@
     }
   }
 }
+
+%link {
+  color: $darkBlue;
+  text-decoration: none;
+
+  @extend %hoverLink;
+}

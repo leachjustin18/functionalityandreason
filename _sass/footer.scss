@@ -3,9 +3,6 @@
     text-align: center;
 
     &__link {
-        color: $darkBlue;
-        text-decoration: none;
-
-        @extend %hoverLink;
+        @extend %link;
     }
 }

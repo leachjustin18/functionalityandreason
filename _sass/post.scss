@@ -106,7 +106,7 @@
             display: inline-block;
             color: white;
             padding: pxToRem(4) pxToRem(8);
-            margin-right: pxToRem(4);
+            margin: pxToRem(4) pxToRem(4) 0 0;
             transition: background ease-in-out .50s;
             text-decoration: none;
             user-select: none;

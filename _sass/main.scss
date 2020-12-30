@@ -27,6 +27,12 @@ p {
     margin: pxToRem(16) 0;
 }
 
+h1,
+h2,
+h3 {
+    font-weight: 600;
+}
+
 @import "header";
 @import "home";
 @import "button";

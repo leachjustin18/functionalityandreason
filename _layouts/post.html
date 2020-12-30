@@ -8,10 +8,10 @@ layout: default
     position: relative;
   }
 
-  .table code.highlighter-rouge,
+  .table .highlighter-rouge,
   kbd,
-  li code.highlighter-rouge,
-  p code.highlighter-rouge {
+  li .highlighter-rouge,
+  p .highlighter-rouge {
     color: #004F94;
     font-size: 1rem;
     background-color: #f7f7f5;
@@ -20,7 +20,7 @@ layout: default
     word-break: break-word;
   }
 
-  .table code.highlighter-rouge {
+  .table .highlighter-rouge {
     background-color: transparent;
   }
 
@@ -61,12 +61,12 @@ layout: default
     margin: 0;
   }
 
-  .rouge-table td.gutter {
+  .rouge-table .gutter {
     padding-right: 0.5rem;
     border-right: 1px solid #adb5bd;
   }
 
-  .rouge-table td.code {
+  .rouge-table .code {
     padding-left: 0.5rem;
   }
 
@@ -357,7 +357,7 @@ layout: default
     <h1>{{ page.title }}</h1>
 
     <div>
-      <em><strong>Approximent reading time:</strong></em>
+      <em>Approximent reading time:</em>
       {% assign words = content | number_of_words %} {% if words < 181 %} A
       minute or less {% else %} {{ words | divided_by:180 }} minutes {% endif %}
     </div>

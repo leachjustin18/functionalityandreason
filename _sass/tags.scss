@@ -1,0 +1,16 @@
+.tags {
+    @extend %pageContainer;
+    text-align: center;
+
+    &__title {
+        font-size: pxToRem(48);
+    }
+
+    &__linkWrapper {
+        margin-bottom: pxToRem(8);
+    }
+
+    &__link {
+        @extend %link;
+    }
+}

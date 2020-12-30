@@ -7,8 +7,7 @@ layout: default
         {% for post in site.tags[page.tag] %}
         <li class="tagPage__listItem">
             <a href="{{ post.url }}" class="tagPage__link">{{ post.title }}</a>
-            ({{ post.date | date_to_string }})<br>
-            {{ post.description }}
+            ({{ post.date | date_to_string }})
         </li>
         {% endfor %}
     </ul>

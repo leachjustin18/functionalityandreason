@@ -1,14 +1,15 @@
 ---
 layout: default
 ---
-<div class="tagPage">
-    <h1>Tag: {{ page.tag }}</h1>
+<main class="tagPage">
+    <h1 class="tagPage__title">Tag: {{ page.tag }}</h1>
     <ul>
         {% for post in site.tags[page.tag] %}
-        <li class="tagPage__listItem"><a href="{{ post.url }}" class="tagPage__link">{{ post.title }}</a>
+        <li class="tagPage__listItem">
+            <a href="{{ post.url }}" class="tagPage__link">{{ post.title }}</a>
             ({{ post.date | date_to_string }})<br>
             {{ post.description }}
         </li>
         {% endfor %}
     </ul>
-</div>
+</main>

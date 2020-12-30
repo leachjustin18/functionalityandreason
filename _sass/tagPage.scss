@@ -1,6 +1,10 @@
 .tagPage {
     @extend %pageContainer;
 
+    &__title {
+        text-align: center;
+    }
+
     &__link {
         @extend %link;
     }

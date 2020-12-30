@@ -1,3 +1,12 @@
 .tagPage {
     @extend %pageContainer;
+
+    &__link {
+        @extend %link;
+    }
+
+    &__listItem {
+        margin-bottom: pxToRem(8);
+        list-style-type: circle;
+    }
 }

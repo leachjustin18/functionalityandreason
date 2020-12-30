@@ -1,0 +1,12 @@
+.notFound {
+    @extend %pageContainer;
+    text-align: center;
+
+    &__title {
+        font-size: pxToRem(48);
+    }
+
+    &__link {
+        @extend %link;
+    }
+}

@@ -53,6 +53,11 @@
     color: $defaultFontColor;
     font-size: pxToRem(18);
     text-decoration: none;
+    margin-right: pxToRem(12);
+
+    &:last-child {
+      margin-right: 0
+    }
 
     @extend %hoverLink;
 

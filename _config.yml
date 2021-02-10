@@ -1,29 +1,5 @@
 defaults:
   - scope:
       path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
     values:
       layout: "default"
-url: "https://functionalityandreason.com"
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-github-metadata
-  - jekyll-avatar
-  - jekyll-gist
-
-sass:
-  style: compressed
-
-permalink: pretty
-
-paginate: 3
-paginate_path: "/:num/"
-
-siteName: Functionality & Reason

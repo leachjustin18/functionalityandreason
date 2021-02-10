@@ -1,7 +1,4 @@
-@import "helpers/functions";
-@import "helpers/variables";
-@import "helpers/mixins";
-@import "helpers/placeholder.scss";
+@import "functions";
 
 html {
     box-sizing: border-box;
@@ -10,34 +7,10 @@ html {
 }
 
 body {
-    color: $defaultFontColor;
     margin: 0;
-    font: normal 400 pxToRem(16)/1.33 'Quicksand', Helvetica, sans-serif;
+    font: normal 400 pxToRem(16px)/1.33 'Quicksand', Helvetica, sans-serif;
 }
 
 *, *::before, *::after {
     box-sizing: inherit;
 }
-
-img {
-    display: block;
-}
-
-p {
-    margin: pxToRem(16) 0;
-}
-
-h1,
-h2,
-h3 {
-    font-weight: 600;
-}
-
-@import "header";
-@import "home";
-@import "button";
-@import "post";
-@import "tagPage";
-@import "tags";
-@import "footer";
-@import "notFound";

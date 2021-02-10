@@ -1,0 +1,38 @@
+<header class="header">
+  {% if layout.home %}
+  <h1 class="header__logo">
+    <a href="/" class="header__logoLink">{{site.siteName}}</a>
+  </h1>
+  {% else %}
+  <h2 class="header__logo">
+    <a href="/" class="header__logoLink">{{site.siteName}}</a>
+  </h2>
+  {% endif %}
+  <nav class="navigation">
+    {% for item in site.data.navigation%}
+    <a href="{{item.link}}"
+      class="navigation__link {% if page.url == item.link%} navigation__linkCurrent{% endif %}">
+      {{item.name}}
+    </a>
+    {% endfor %}
+  </nav>
+
+  <label for="mobileMenu" tabindex="0" class="header__menuLabel" id="mobileMenuLabel">
+    <span class="header__menuBar"></span>
+    <span class="header__menuBar"></span>
+    <span class="header__menuBar"></span>
+    Menu
+  </label>
+</header>
+
+<input type="checkbox" id="mobileMenu" tabindex="-1" />
+<nav class="mobileNavigation">
+  {% for item in site.data.navigation%}
+  <a href="{{item.link}}"
+    class="mobileNavigation__link {% if page.url == item.link%} mobileNavigation__linkCurrent{% endif %}">
+    <span class="mobileNavigation__text">
+      {{item.name}}
+    </span>
+  </a>
+  {% endfor %}
+</nav>

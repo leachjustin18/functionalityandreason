@@ -1,0 +1,8 @@
+.footer {
+    margin: pxToRem(32) 0 pxToRem(32) 0;
+    text-align: center;
+
+    &__link {
+        @extend %link;
+    }
+}

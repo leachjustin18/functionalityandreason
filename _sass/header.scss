@@ -1,0 +1,136 @@
+.header {
+  align-items: center;
+  background-color: white;
+  border-bottom: pxToRem(1) solid #ecf0f1;
+  box-shadow: 0 pxToRem(1) pxToRem(5) #ecf0f1;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: pxToRem(48);
+  padding: pxToRem(16) pxToRem(32);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  &__logo {
+    font-weight: 700;
+    margin: 0;
+    @include desktop() {
+      font-size: pxToRem(26);
+    }
+
+    font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+
+    @extend %hoverLink;
+  }
+
+  &__logoLink {
+    color: $defaultFontColor;
+    text-decoration: none;
+  }
+
+  &__menuLabel {
+    cursor: pointer;
+    margin-left: pxToRem(8);
+    user-select: none;
+
+    @include desktop() {
+      display: none;
+    }
+  }
+
+  &__menuBar {
+    background-color: $defaultFontColor;
+    display: block;
+    height: pxToRem(3);
+    margin: 0 auto pxToRem(4);
+    width: 70%;
+  }
+}
+
+.navigation {
+  display: none;
+  &__link {
+    color: $defaultFontColor;
+    font-size: pxToRem(18);
+    text-decoration: none;
+    margin-right: pxToRem(12);
+
+    &:last-child {
+      margin-right: 0
+    }
+
+    @extend %hoverLink;
+
+    &Current {
+      &::after {
+        width: 95%;
+      }
+    }
+  }
+
+  @include desktop() {
+    display: block;
+  }
+}
+
+#mobileMenu {
+  position: fixed;
+  left: -9999px;
+
+  &:checked {
+    ~ .mobileNavigation {
+      transform: translateX(0);
+    }
+  }
+}
+
+.mobileNavigation {
+  box-shadow: 0 pxToRem(6) pxToRem(12) $grey;
+  position: fixed;
+  height: 100%;
+  background-color: #f7f7f7;
+  transform: translateX(100%);
+  top: pxToRem(74);
+  z-index: 20;
+  right: 0;
+  width: pxToRem(300);
+
+  transition: transform 0.40s ease-in-out;
+
+  @include desktop() {
+    display: none;
+  }
+
+  &__link {
+    border-bottom: pxToRem(1) solid #000;
+    color: $defaultFontColor;
+    display: block;
+    padding: pxToRem(16);
+    text-decoration: none;
+
+    &:first-child {
+      border-top: pxToRem(1) solid #000;
+    }
+
+    &:hover {
+      .mobileNavigation__text {
+        &::after {
+          width: 95%;
+        }
+      }
+    }
+
+    .mobileNavigation__text {
+      @extend %hoverLink;
+    }
+  }
+
+  &__linkCurrent {
+    .mobileNavigation__text {
+      font-weight: 600;
+      &::after {
+        width: 95%;
+      }
+    }
+  }
+}

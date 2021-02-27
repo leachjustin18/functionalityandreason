@@ -74,17 +74,15 @@ site.paginate | plus:offset %} {% if postsCovered < postCount %}
 <script>
   const loadMoreButton = document.getElementById('loadMorePosts');
   const homeMain = document.getElementById('homeMain');
-  const nextPage = parseInt(homeMain.getAttribute('data-page')) + 1;
   const totalPages = parseInt(homeMain.getAttribute('data-totalPages'));
+  const storedPageNumber = sessionStorage.getItem('currentPageNumber');
 
-  loadMoreButton.addEventListener('click', function () {
+  const loadMorePosts = (pageNumber) => {
     const request = new XMLHttpRequest();
-    request.open('GET', nextPage, true);
+      request.open('GET', pageNumber, true);
 
-    request.onload = function () {
-      if (this.status >= 200 && this.status < 400) {
-        // Success!
-        const resp = this.response;
+      request.onload = function () {
+       const resp = this.response;
 
         const tmp = document.implementation.createHTMLDocument();
         tmp.body.innerHTML = resp;
@@ -100,20 +98,26 @@ site.paginate | plus:offset %} {% if postsCovered < postCount %}
           homeMain.appendChild(articles[i]);
         }
 
-        homeMain.setAttribute('data-page', nextPage);
+        homeMain.setAttribute('data-page', pageNumber);
+        sessionStorage.setItem('currentPageNumber', pageNumber);
+      }
 
-        if (nextPage === totalPages) {
+       request.send();
+
+       if (pageNumber === totalPages) {
           loadMoreButton.setAttribute('disabled', true);
           loadMoreButton.innerHTML = 'All Posts Loaded';
         }
-      }
-    };
+  }
 
-    request.onerror = function () {
-      // There was a connection error of some sort
-      loadMoreButton.remove();
-    };
+  if(storedPageNumber) {
+    for(let pageNumber = 2; pageNumber <= parseInt(storedPageNumber); pageNumber++) {
+      loadMorePosts(pageNumber);
+    }
+  }
 
-    request.send();
+  loadMoreButton.addEventListener('click', function () {
+    const nextPage = parseInt(homeMain.getAttribute('data-page')) + 1;
+    loadMorePosts(nextPage)
   });
 </script>

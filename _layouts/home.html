@@ -5,23 +5,17 @@ home: true
 
 {% assign posts = site.posts | where: "language", page.language %} {% if
 paginator.page %} {% assign offset = paginator.page | minus:1 |
-times:paginator.per_page %} {% assign currentPage = paginator.page %} {% else %}
+times:paginator.per_page %} {% assign currentPage = paginator.page %}
+{% else %}
 {% assign offset = 0 %} {% assign currentPage = 1 %} {% endif %}
 
-<main
-  id="homeMain"
-  class="home__main"
-  data-page="{{currentPage}}"
-  data-totalPages="{{ paginator.total_pages }}"
->
+<main id="homeMain" class="home__main" data-page="{{currentPage}}"
+  data-totalPages="{{ paginator.total_pages }}">
   {% for post in site.posts limit:site.paginate offset:offset %}
   <article class="home__article">
     <a href="{{ post.url }}">
-      <img
-        src="http://placekitten.com/300/300"
-        alt="{{ post.title }} article"
-        style="width: 100%"
-      />
+      <img src="http://placekitten.com/300/300" alt="{{ post.title }} article"
+        style="width: 100%" />
     </a>
     <div class="home__articleBody">
       <h2 class="home__articleBodyTitle">{{ post.title }}</h2>
@@ -29,17 +23,16 @@ times:paginator.per_page %} {% assign currentPage = paginator.page %} {% else %}
 
       <div>{{ post.excerpt | strip_html | truncate: 85 }}</div>
 
-      <a href="{{ post.url }}" class="home__articleBodyLink"
-        >{{ post.title }} post</a
-      >
+      <a href="{{ post.url }}" class="home__articleBodyLink">{{ post.title }}
+        post</a>
     </div>
   </article>
   {% endfor %}
 </main>
 
 {% assign postCount = site.posts | size %} {% assign postsCovered =
-site.paginate | plus:offset %} {% if postsCovered < postCount %}
-<div class="home__loadMoreButtonWrapper">
+site.paginate | plus:offset %} {% if postsCovered < postCount %} <div
+  class="home__loadMoreButtonWrapper">
   <button id="loadMorePosts" class="btn btn--primary" type="button">
     Load more posts
   </button>
@@ -50,18 +43,18 @@ site.paginate | plus:offset %} {% if postsCovered < postCount %}
   {% if paginator.total_pages > 1 %}
   <div class="pagination">
     {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
+    <a href="{{ paginator.previous_page_path | relative_url }}">&laquo;
+      Prev</a>
     {% else %}
     <span>&laquo; Prev</span>
     {% endif %} {% for page in (1..paginator.total_pages) %} {% if page ==
-    paginator.page %}
+      paginator.page %}
     <em>{{ page }}</em>
     {% elsif page == 1 %}
     <a href="{{ '/' | relative_url }}">{{ page }}</a>
     {% else %}
-    <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}"
-      >{{ page }}</a
-    >
+    <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{
+        page }}</a>
     {% endif %} {% endfor %} {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
     {% else %}
@@ -79,39 +72,40 @@ site.paginate | plus:offset %} {% if postsCovered < postCount %}
 
   const loadMorePosts = (pageNumber) => {
     const request = new XMLHttpRequest();
-      request.open('GET', pageNumber, true);
+    request.open('GET', pageNumber, true);
 
-      request.onload = function () {
-       const resp = this.response;
+    request.onload = function () {
+      const resp = this.response;
 
-        const tmp = document.implementation.createHTMLDocument();
-        tmp.body.innerHTML = resp;
-        const nextPageHtmlData = tmp.body;
+      const tmp = document.implementation.createHTMLDocument();
+      tmp.body.innerHTML = resp;
+      const nextPageHtmlData = tmp.body;
 
-        const articles = Array.from(
-          nextPageHtmlData.getElementsByTagName('article')
-        );
-        const articlesLength = articles.length;
-        let i = 0;
+      const articles = Array.from(
+        nextPageHtmlData.getElementsByTagName('article')
+      );
+      const articlesLength = articles.length;
+      let i = 0;
 
-        for (i; i < articlesLength; i++) {
-          homeMain.appendChild(articles[i]);
-        }
-
-        homeMain.setAttribute('data-page', pageNumber);
-        sessionStorage.setItem('currentPageNumber', pageNumber);
+      for (i; i < articlesLength; i++) {
+        homeMain.appendChild(articles[i]);
       }
 
-       request.send();
+      homeMain.setAttribute('data-page', pageNumber);
+      sessionStorage.setItem('currentPageNumber', pageNumber);
+    }
 
-       if (pageNumber === totalPages) {
-          loadMoreButton.setAttribute('disabled', true);
-          loadMoreButton.innerHTML = 'All Posts Loaded';
-        }
+    request.send();
+
+    if (pageNumber === totalPages) {
+      loadMoreButton.setAttribute('disabled', true);
+      loadMoreButton.innerHTML = 'All Posts Loaded';
+    }
   }
 
-  if(storedPageNumber) {
-    for(let pageNumber = 2; pageNumber <= parseInt(storedPageNumber); pageNumber++) {
+  if (storedPageNumber) {
+    for (let pageNumber = 2; pageNumber <= parseInt(
+        storedPageNumber); pageNumber++) {
       loadMorePosts(pageNumber);
     }
   }

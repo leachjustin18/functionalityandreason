@@ -14,8 +14,12 @@ times:paginator.per_page %} {% assign currentPage = paginator.page %}
   {% for post in site.posts limit:site.paginate offset:offset %}
   <article class="home__article">
     <a href="{{ post.url }}">
+      {% if post.image %}
+      <img src="/assets/images/{{ post.image }}" alt="{{ post.title }} article" width="100%"/>
+      {% else %}
       <img src="http://placekitten.com/300/300" alt="{{ post.title }} article"
         style="width: 100%" />
+      {% endif %}
     </a>
     <div class="home__articleBody">
       <h2 class="home__articleBodyTitle">{{ post.title }}</h2>
